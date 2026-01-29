@@ -1,30 +1,37 @@
 package BannerApp;
 /**
- * OOPSBannerApp UC3-OOPS Banner Display Application
+ *     OOPSBannerApp UC4-OOPS Banner print using String.join() and a loop
  *
  */
 public class OOPSBannerApp {
     public static void main(String args[]) {
-        System.out.println(String.join("   ",
-                "*********", "*********", "*********", "*********"));
+        String[] banner = {
+                String.join("   ",
+                        "*********", "*********", "*********", "*********"),
 
-        System.out.println(String.join("   ",
-                "*       *", "*       *", "*       *", "*        "));
+                String.join("   ",
+                        "*       *", "*       *", "*       *", "*        "),
 
-        System.out.println(String.join("   ",
-                "*       *", "*       *", "*       *", "*        "));
+                String.join("   ",
+                        "*       *", "*       *", "*       *", "*        "),
 
-        System.out.println(String.join("   ",
-                "*       *", "*       *", "*********", "*********"));
+                String.join("   ",
+                        "*       *", "*       *", "*********", "*********"),
 
-        System.out.println(String.join("   ",
-                "*       *", "*       *", "*        ", "        *"));
+                String.join("   ",
+                        "*       *", "*       *", "*        ", "        *"),
 
-        System.out.println(String.join("   ",
-                "*       *", "*       *", "*        ", "        *"));
+                String.join("   ",
+                        "*       *", "*       *", "*        ", "        *"),
 
-        System.out.println(String.join("   ",
-                "*********", "*********", "*        ", "*********"));
+                String.join("   ",
+                        "*********", "*********", "*        ", "*********")
+        };
+
+        for(String line:banner){
+            System.out.println(line);
+
+        }
 
 
         System.out.println();
