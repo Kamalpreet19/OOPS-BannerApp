@@ -1,26 +1,64 @@
 package BannerApp;
 /**
- *    OOPSBannerApp UC5- Prints OOPS banner using inline array and loop.
+ *   OOPSBannerApp UC6- Refactor Banner Logic into Functions
  *
  */
 public class OOPSBannerApp {
-    public static void main(String args[]) {
-        String[] banner2 = {
-                String.join("   ", "*********", "*********", "*********", "*********"),
-                String.join("   ", "*       *", "*       *", "*       *", "*        "),
-                String.join("   ", "*       *", "*       *", "*       *", "*        "),
-                String.join("   ", "*       *", "*       *", "*********", "*********"),
-                String.join("   ", "*       *", "*       *", "*        ", "        *"),
-                String.join("   ", "*       *", "*       *", "*        ", "        *"),
-                String.join("   ", "*********", "*********", "*        ", "*********")
+    public static String[] getOPattern() {
+        return new String[]{
+                "    ***    ",
+                " **     ** ",
+                "**       **",
+                "**       **",
+                "**       **",
+                " **     ** ",
+                "    ***    "
         };
 
+    }
 
-        for (String line : banner2) {
-            System.out.println(line);
+
+    public static String[] getPPattern() {
+        return new String[]{
+                "*********",
+                "*       *",
+                "*       *",
+                "*********",
+                "*        ",
+                "*        ",
+                "*        "
+
+        };
+
+    }
+
+    public static String[] getSPattern() {
+        return new String[]{
+                "*********",
+                "*        ",
+                "*        ",
+                "*********",
+                "        *",
+                "        *",
+                "*********",
+
+        };
+
+    }
+
+    public static void main(String args[]){
+
+        String[] oPattern=getOPattern();
+        String[] pPattern=getPPattern();
+        String[] sPattern=getSPattern();
+
+
+
+
+        for(int i=0;i<oPattern.length;i++){
+            System.out.println(oPattern[i] + " " + oPattern[i] + " " + pPattern[i] + " " + sPattern[i]);
+
         }
-        System.out.println();
-
 
     }
 }
