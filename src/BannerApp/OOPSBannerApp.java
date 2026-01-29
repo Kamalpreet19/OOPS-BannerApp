@@ -1,11 +1,32 @@
 package BannerApp;
 /**
- *   OOPSBannerApp UC6- Refactor Banner Logic into Functions
+ *   OOPSBannerApp UC7- Store Character Pattern in a Class
  *
  */
 public class OOPSBannerApp {
-    public static String[] getOPattern() {
-        return new String[]{
+    static class  CharacterPatternMap{
+        private char characters;
+        private String[] patterns;
+
+        CharacterPatternMap(char characters, String[] patterns){
+            this.characters=characters;
+            this.patterns=patterns;
+        }
+
+        public char getCharacters(){
+            return characters;
+        }
+
+        public String[] getPatterns(){
+            return patterns;
+        }
+
+    }
+
+
+
+    public static void main(String args[]){
+        String[] oPattern={
                 "    ***    ",
                 " **     ** ",
                 "**       **",
@@ -13,13 +34,10 @@ public class OOPSBannerApp {
                 "**       **",
                 " **     ** ",
                 "    ***    "
+
         };
 
-    }
-
-
-    public static String[] getPPattern() {
-        return new String[]{
+        String[] pPattern={
                 "*********",
                 "*       *",
                 "*       *",
@@ -30,34 +48,33 @@ public class OOPSBannerApp {
 
         };
 
-    }
 
-    public static String[] getSPattern() {
-        return new String[]{
+        String[] sPattern={
                 "*********",
                 "*        ",
                 "*        ",
                 "*********",
                 "        *",
                 "        *",
-                "*********",
-
+                "*********"
         };
 
-    }
-
-    public static void main(String args[]){
-
-        String[] oPattern=getOPattern();
-        String[] pPattern=getPPattern();
-        String[] sPattern=getSPattern();
 
 
+        CharacterPatternMap O=new CharacterPatternMap('O', oPattern);
+        CharacterPatternMap P=new CharacterPatternMap('P', pPattern);
+        CharacterPatternMap S=new CharacterPatternMap('S', sPattern);
 
+        CharacterPatternMap[] bannerChars={O,O,P,S};
 
-        for(int i=0;i<oPattern.length;i++){
-            System.out.println(oPattern[i] + " " + oPattern[i] + " " + pPattern[i] + " " + sPattern[i]);
+        for(int i=0;i<7;i++){
+            StringBuilder line=new StringBuilder();
 
+            for(CharacterPatternMap ch:bannerChars){
+                line.append(ch.getPatterns()[i]).append("   ");
+            }
+
+            System.out.println(line.toString());
         }
 
     }
